@@ -1,0 +1,12 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: personal-blog-service
+spec:
+  type: LoadBalancer  # Use ClusterIP for internal access only
+  ports:
+    - port: 80
+      targetPort: 5000
+  selector:
+    app: personal-blog
